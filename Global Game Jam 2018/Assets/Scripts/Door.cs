@@ -8,6 +8,8 @@ public class Door : MonoBehaviour {
 
 	public float currentFrequency;
 
+	bool isActivated;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +17,13 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(currentFrequency > frequencyRange.min && currentFrequency < frequencyRange.max && !isActivated) {
+			isActivated = true;
+			Activate();
+		} else if( (currentFrequency < frequencyRange.min || currentFrequency > frequencyRange.max) && isActivated) {
+			isActivated = false;
+			Deactivate();
+		}
 	}
 
 	void OnEnable () {
@@ -26,11 +34,15 @@ public class Door : MonoBehaviour {
 		EventManager.SendFrequencyEvent -= SetFrequency;
 	}
 
-	public void Activate (float frequency) {
+	public void Activate () {
+		
+	}
+
+	public void Deactivate () {
 		
 	}
 
 	public void SetFrequency(float frequency) {
-		
+		currentFrequency = frequency;
 	}
 }

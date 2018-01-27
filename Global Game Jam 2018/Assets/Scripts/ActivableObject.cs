@@ -5,4 +5,6 @@ using UnityEngine;
 public interface ActivableObject {
 
 	void Activate();
+
+	void Deactivate();
 }
