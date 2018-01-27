@@ -109,3 +109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapToCenter: 0
   isCorner: 0
+  isWall: 1

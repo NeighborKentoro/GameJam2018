@@ -8,6 +8,8 @@ public class SnapTile : MonoBehaviour {
 
 	public bool isCorner;
 
+	public bool isWall;
+
 	// Use this for initialization
 	void Start () {
 		Snap();
@@ -21,6 +23,7 @@ public class SnapTile : MonoBehaviour {
 	void Snap() {
 		float roundedZ, roundedX, offsetZ, offsetX, finalZ, finalX;
 		float halfZScale = transform.localScale.z/2;
+		float halfXScale = transform.localScale.x/2;
 		float height = 0 + (transform.localScale.y/2);
 		roundedZ = Mathf.Round(transform.position.z);
 		roundedX = Mathf.Round(transform.position.x);
@@ -51,6 +54,36 @@ public class SnapTile : MonoBehaviour {
 				finalX = roundedX - halfZScale;
 			} else {
 				finalX = roundedX + halfZScale;
+			}
+			transform.localPosition = new Vector3(finalX, height, finalZ);
+		} else if(isWall) {
+			float yRot = (Mathf.Floor(transform.rotation.eulerAngles.y/90) * 90) + ((transform.rotation.eulerAngles.y % 90) < 45 ? 0 : 90);
+			if(yRot > 0) {
+				transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, yRot, transform.rotation.eulerAngles.z);
+				if(offsetZ > 0) {
+					finalZ = roundedZ - halfXScale;
+				} else {
+					finalZ = roundedZ + halfXScale;
+				}
+
+				if(offsetX > 0) {
+					finalX = roundedX - halfZScale;
+				} else {
+					finalX = roundedX + halfZScale;
+				}
+			} else {
+				transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, yRot, transform.rotation.eulerAngles.z);
+				if(offsetX > 0) {
+					finalX = roundedX - halfXScale;
+				} else {
+					finalX = roundedX + halfXScale;
+				}
+
+				if(offsetZ > 0) {
+					finalZ = roundedZ - halfZScale;
+				} else {
+					finalZ = roundedZ + halfZScale;
+				}
 			}
 			transform.localPosition = new Vector3(finalX, height, finalZ);
 		} else {
