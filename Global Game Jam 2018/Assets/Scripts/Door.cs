@@ -35,11 +35,11 @@ public class Door : MonoBehaviour {
 	}
 
 	public void Activate () {
-		
+		transform.localPosition = new Vector3(transform.localPosition.x + 1, transform.localPosition.y, transform.localPosition.z);
 	}
 
 	public void Deactivate () {
-		
+		transform.localPosition = new Vector3(transform.localPosition.x - 1, transform.localPosition.y, transform.localPosition.z);
 	}
 
 	public void SetFrequency(float frequency) {
