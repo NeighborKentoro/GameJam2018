@@ -313,6 +313,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: c53a369516f18674abe207e776ed159c,
         type: 2}
+    - target: {fileID: 114411968052108808, guid: 4610ea2829d03914aa2550ca2ef1b676,
+        type: 2}
+      propertyPath: isSlidingDoor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4610ea2829d03914aa2550ca2ef1b676, type: 2}
   m_IsPrefabParent: 0
@@ -482,6 +487,11 @@ Prefab:
     - target: {fileID: 4882110019096074, guid: 4610ea2829d03914aa2550ca2ef1b676, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114411968052108808, guid: 4610ea2829d03914aa2550ca2ef1b676,
+        type: 2}
+      propertyPath: isSlidingDoor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4610ea2829d03914aa2550ca2ef1b676, type: 2}

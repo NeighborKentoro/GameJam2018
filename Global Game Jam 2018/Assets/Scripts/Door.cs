@@ -10,6 +10,8 @@ public class Door : MonoBehaviour {
 
 	bool isActivated;
 
+	public bool isSlidingDoor;
+
 	AudioSource audio;
 
 	// Use this for initialization
@@ -37,12 +39,20 @@ public class Door : MonoBehaviour {
 	}
 
 	public void Activate () {
-		transform.localPosition = new Vector3(transform.localPosition.x + 1, transform.localPosition.y, transform.localPosition.z);
+		if(isSlidingDoor) {
+			transform.localPosition = new Vector3(transform.localPosition.x + 1, transform.localPosition.y, transform.localPosition.z);
+		} else {
+			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
+		}
 		audio.Play();
 	}
 
 	public void Deactivate () {
-		transform.localPosition = new Vector3(transform.localPosition.x - 1, transform.localPosition.y, transform.localPosition.z);
+		if(isSlidingDoor) {
+			transform.localPosition = new Vector3(transform.localPosition.x - 1, transform.localPosition.y, transform.localPosition.z);
+		} else {
+			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1, transform.localPosition.z);
+		}
 		audio.Play();
 	}
 
