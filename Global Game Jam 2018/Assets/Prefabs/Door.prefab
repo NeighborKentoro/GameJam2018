@@ -232,4 +232,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b9e57779b31db44a0e7fa5db1f41a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapToCenter: 1
+  snapToCenter: 0
+  isCorner: 0

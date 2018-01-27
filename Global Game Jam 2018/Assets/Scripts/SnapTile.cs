@@ -39,7 +39,7 @@ public class SnapTile : MonoBehaviour {
 			} else {
 				finalX = roundedX + 0.5f;
 			}
-			transform.position = new Vector3(finalX, height, finalZ);
+			transform.localPosition = new Vector3(finalX, height, finalZ);
 		} else if(isCorner) {
 			if(offsetZ > 0) {
 				finalZ = roundedZ - halfZScale;
@@ -52,7 +52,7 @@ public class SnapTile : MonoBehaviour {
 			} else {
 				finalX = roundedX + halfZScale;
 			}
-			transform.position = new Vector3(finalX, height, finalZ);
+			transform.localPosition = new Vector3(finalX, height, finalZ);
 		} else {
 			float yRot = (Mathf.Floor(transform.rotation.eulerAngles.y/90) * 90) + ((transform.rotation.eulerAngles.y % 90) < 45 ? 0 : 90);
 			if(yRot > 0) {
@@ -72,7 +72,7 @@ public class SnapTile : MonoBehaviour {
 				}
 				finalZ = roundedZ;
 			}
-			transform.position = new Vector3(finalX, height, finalZ);
+			transform.localPosition = new Vector3(finalX, height, finalZ);
 		}
 
 	}
