@@ -10,9 +10,11 @@ public class Door : MonoBehaviour {
 
 	bool isActivated;
 
+	AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
-		
+		audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -36,10 +38,12 @@ public class Door : MonoBehaviour {
 
 	public void Activate () {
 		transform.localPosition = new Vector3(transform.localPosition.x + 1, transform.localPosition.y, transform.localPosition.z);
+		audio.Play();
 	}
 
 	public void Deactivate () {
 		transform.localPosition = new Vector3(transform.localPosition.x - 1, transform.localPosition.y, transform.localPosition.z);
+		audio.Play();
 	}
 
 	public void SetFrequency(float frequency) {
