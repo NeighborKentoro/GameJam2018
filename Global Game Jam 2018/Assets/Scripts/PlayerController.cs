@@ -12,9 +12,16 @@ public class PlayerController : MonoBehaviour {
 
 	public float currentFrequency = 1;
 
+	public Transform[] startPoints;
+
+	private int currentLevel = 0;
+
 	// Use this for initialization
 	void Start () {
 		rbody = GetComponent<Rigidbody>();
+
+		transform.position = startPoints[currentLevel].transform.position;
+		currentLevel += 1;
 	}
 	
 	// Update is called once per frame
@@ -65,5 +72,20 @@ public class PlayerController : MonoBehaviour {
 			EventManager.SendFrequency(currentFrequency);
 		}
 		#endregion
+	}
+
+	void OnEnable () {
+		EventManager.ExitLevelEvent += ExitLevel;
+	}
+
+	void OnDisable () {
+		EventManager.ExitLevelEvent -= ExitLevel;
+	}
+
+	public void ExitLevel () {
+		if(currentLevel < startPoints.Length) {
+			transform.position = startPoints[currentLevel].transform.position;
+			currentLevel += 1;
+		}
 	}
 }
