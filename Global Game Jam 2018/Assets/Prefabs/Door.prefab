@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1970120294321858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 0.05}
   m_Children: []
   m_Father: {fileID: 4882110019096074}
   m_RootOrder: 0
@@ -219,3 +219,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequencyRange: {fileID: 11400000, guid: 5da91732ff4e6d945bebbf3c5a3f9d9c, type: 2}
   currentFrequency: 0
+  isSlidingDoor: 0
