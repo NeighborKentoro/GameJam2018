@@ -21,7 +21,7 @@ public class CameraMove : MonoBehaviour {
 	void Update () {
 		if(nextLevel < levels.Length) {
 			if(moving) {
-				transform.position = Vector3.SmoothDamp(transform.position, levels[nextLevel].position, ref velocity, 0.8f);
+				transform.position = Vector3.SmoothDamp(transform.position, levels[nextLevel].position, ref velocity, 0.6f);
 				if(Mathf.Approximately(transform.position.y, levels[nextLevel].position.y)) {
 					moving = false;
 					nextLevel += 1;
