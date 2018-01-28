@@ -41,28 +41,36 @@ public class PlayerController : MonoBehaviour {
 			if(yAxis > 0) {
 				if(xAxis > 0.5f) {
 					xSpeed = maxSpeed;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
 				} else if(xAxis < -0.5f) {
 					zSpeed = maxSpeed;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
 				} else {
 					xSpeed = maxSpeed/1.5f;
 					zSpeed = maxSpeed/1.5f;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 45, 0));
 				}
 			} else if(yAxis < -0) {
 				if(xAxis > 0.5f) {
 					zSpeed = -maxSpeed;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
 				} else if(xAxis < -0.5f) {
 					xSpeed = -maxSpeed;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
 				} else {
 					xSpeed = -maxSpeed/1.5f;
 					zSpeed = -maxSpeed/1.5f;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 225, 0));
 				}
 			} else if(Mathf.Approximately(yAxis, 0)) {
 				if(xAxis > 0.5f) {
 					xSpeed = maxSpeed/1.5f;
 					zSpeed = -maxSpeed/1.5f;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 135, 0));
 				} else if(xAxis < -0.5f) {
 					xSpeed = -maxSpeed/1.5f;
 					zSpeed = maxSpeed/1.5f;
+					transform.rotation = Quaternion.Euler(new Vector3(0, 315, 0));
 				}
 			}
 
