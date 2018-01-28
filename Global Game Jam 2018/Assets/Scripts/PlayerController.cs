@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
 	AudioSource shuffleSound;
 
+	private bool controlsEnabled = true;
+
 	// Use this for initialization
 	void Start () {
 		rbody = GetComponent<Rigidbody>();
@@ -35,31 +37,41 @@ public class PlayerController : MonoBehaviour {
 		float yAxis = Input.GetAxis("Vertical");
 
 		#region PlayerMovement
-		if(yAxis > 0) {
-			if(xAxis > 0.5f) {
-				xSpeed = maxSpeed;
-			} else if(xAxis < -0.5f) {
-				zSpeed = maxSpeed;
-			} else {
-				xSpeed = maxSpeed/1.5f;
-				zSpeed = maxSpeed/1.5f;
+		if(controlsEnabled) {
+			if(yAxis > 0) {
+				if(xAxis > 0.5f) {
+					xSpeed = maxSpeed;
+				} else if(xAxis < -0.5f) {
+					zSpeed = maxSpeed;
+				} else {
+					xSpeed = maxSpeed/1.5f;
+					zSpeed = maxSpeed/1.5f;
+				}
+			} else if(yAxis < -0) {
+				if(xAxis > 0.5f) {
+					zSpeed = -maxSpeed;
+				} else if(xAxis < -0.5f) {
+					xSpeed = -maxSpeed;
+				} else {
+					xSpeed = -maxSpeed/1.5f;
+					zSpeed = -maxSpeed/1.5f;
+				}
+			} else if(Mathf.Approximately(yAxis, 0)) {
+				if(xAxis > 0.5f) {
+					xSpeed = maxSpeed/1.5f;
+					zSpeed = -maxSpeed/1.5f;
+				} else if(xAxis < -0.5f) {
+					xSpeed = -maxSpeed/1.5f;
+					zSpeed = maxSpeed/1.5f;
+				}
 			}
-		} else if(yAxis < -0) {
-			if(xAxis > 0.5f) {
-				zSpeed = -maxSpeed;
-			} else if(xAxis < -0.5f) {
-				xSpeed = -maxSpeed;
-			} else {
-				xSpeed = -maxSpeed/1.5f;
-				zSpeed = -maxSpeed/1.5f;
-			}
-		} else if(Mathf.Approximately(yAxis, 0)) {
-			if(xAxis > 0.5f) {
-				xSpeed = maxSpeed/1.5f;
-				zSpeed = -maxSpeed/1.5f;
-			} else if(xAxis < -0.5f) {
-				xSpeed = -maxSpeed/1.5f;
-				zSpeed = maxSpeed/1.5f;
+
+			if(Input.GetButtonDown("UpFrequency") && currentFrequency < freqRange.max) {
+				currentFrequency += 1;
+				EventManager.SendFrequency(currentFrequency);
+			} else if(Input.GetButtonDown("DownFrequency") && currentFrequency > freqRange.min) {
+				currentFrequency -= 1;
+				EventManager.SendFrequency(currentFrequency);
 			}
 		}
 
@@ -72,15 +84,6 @@ public class PlayerController : MonoBehaviour {
 		rbody.velocity = new Vector3(xSpeed, rbody.velocity.y, zSpeed);
 		#endregion
 
-		#region FrequencyControls
-		if(Input.GetButtonDown("UpFrequency") && currentFrequency < freqRange.max) {
-			currentFrequency += 1;
-			EventManager.SendFrequency(currentFrequency);
-		} else if(Input.GetButtonDown("DownFrequency") && currentFrequency > freqRange.min) {
-			currentFrequency -= 1;
-			EventManager.SendFrequency(currentFrequency);
-		}
-		#endregion
 	}
 
 	void OnEnable () {
@@ -97,6 +100,13 @@ public class PlayerController : MonoBehaviour {
 			currentLevel += 1;
 			currentFrequency = 1;
 			EventManager.SendFrequency(1);
+			controlsEnabled = false;
+			StartCoroutine(DisableControls());
 		}
+	}
+
+	IEnumerator DisableControls() {
+		yield return new WaitForSeconds(2.5f);
+		controlsEnabled = true;
 	}
 }
