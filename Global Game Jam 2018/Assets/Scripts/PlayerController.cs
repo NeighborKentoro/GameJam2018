@@ -109,4 +109,8 @@ public class PlayerController : MonoBehaviour {
 		yield return new WaitForSeconds(2.5f);
 		controlsEnabled = true;
 	}
+
+	public void KillPlayer () {
+		transform.position = startPoints[currentLevel - 1].position;
+	}
 }

@@ -17,7 +17,7 @@ bool isActivated;
 
 // Update is called once per frame
 void Update () {
-	if(currentFrequency > frequencyRange.min && currentFrequency < frequencyRange.max && !isActivated) {
+	if(currentFrequency >= frequencyRange.min && currentFrequency <= frequencyRange.max && !isActivated) {
 		isActivated = true;
 		Activate();
 	} else if( (currentFrequency < frequencyRange.min || currentFrequency > frequencyRange.max) && isActivated) {
