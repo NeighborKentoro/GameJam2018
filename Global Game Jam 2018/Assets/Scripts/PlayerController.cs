@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour {
 		float zSpeed = 0;
 		float xAxis = Input.GetAxis("Horizontal");
 		float yAxis = Input.GetAxis("Vertical");
+        float freqMod = Input.GetAxisRaw("Frequency") * .48f;
 
-		#region PlayerMovement
-		if(controlsEnabled) {
+        #region PlayerMovement
+        if(controlsEnabled) {
 			if(yAxis > 0) {
 				if(xAxis > 0.5f) {
 					xSpeed = maxSpeed;
@@ -74,16 +75,22 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 
-			if(Input.GetButtonDown("UpFrequency") && currentFrequency < freqRange.max) {
-				currentFrequency += 1;
-				EventManager.SendFrequency(currentFrequency);
-			} else if(Input.GetButtonDown("DownFrequency") && currentFrequency > freqRange.min) {
-				currentFrequency -= 1;
-				EventManager.SendFrequency(currentFrequency);
-			}
-		}
+            if(Input.GetButtonDown("UpFrequency") && currentFrequency < freqRange.max) {
+                currentFrequency += 1;
+                EventManager.SendFrequency(currentFrequency);
+            } else if(Input.GetButtonDown("DownFrequency") && currentFrequency > freqRange.min) {
+                currentFrequency -= 1;
+                EventManager.SendFrequency(currentFrequency);
+            } else {
+                float newFrequency = currentFrequency + freqMod;
+                if(newFrequency >= freqRange.min && newFrequency <= freqRange.max) {
+                    currentFrequency = newFrequency;
+                    EventManager.SendFrequency(currentFrequency);
+                }
+            }
+        }
 
-		if( (xSpeed != 0 || zSpeed != 0) && !shuffleSound.isPlaying) {
+        if( (xSpeed != 0 || zSpeed != 0) && !shuffleSound.isPlaying) {
 			shuffleSound.Play();
 		} else if( Mathf.Approximately(xSpeed, 0) && Mathf.Approximately(zSpeed, 0) ) {
 			shuffleSound.Stop();
