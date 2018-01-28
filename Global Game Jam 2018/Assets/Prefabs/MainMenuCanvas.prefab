@@ -179,7 +179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RADIOACTIVITY
+  m_Text: RADIO ACTIVITY
 --- !u!114 &114061059161877036
 MonoBehaviour:
   m_ObjectHideFlags: 1
