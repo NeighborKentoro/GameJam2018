@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Direction {NW, NE, SW, SE};
 
@@ -14,8 +15,11 @@ public class Laser : MonoBehaviour {
 	private Vector3 forward;
 	public Direction dir;
 
-	// Use this for initialization
-	void Start () {
+    public RectTransform labelTransform;
+    public Text labelText;
+
+    // Use this for initialization
+    void Start () {
 		line = GetComponent<LineRenderer>();
 		if(dir == Direction.NE) {
 			forward = new Vector3(1, 0, 0);
@@ -44,9 +48,17 @@ public class Laser : MonoBehaviour {
 
 	void OnEnable () {
 		EventManager.SendFrequencyEvent += SetFrequency;
-	}
 
-	void OnDisable () {
+        //set the label to show max and min frequency range
+        labelText.text = string.Format("{0}-{1}", frequencyRange.min, frequencyRange.max);
+
+        //rotate the door's frequency range label (hopefully after parent gameobject calls Snap() )
+        float facingCameraY = 45 - transform.parent.rotation.eulerAngles.y;
+        labelTransform.localRotation = Quaternion.Euler(labelTransform.rotation.eulerAngles.x, facingCameraY, labelTransform.rotation.eulerAngles.z);
+
+    }
+
+    void OnDisable () {
 		EventManager.SendFrequencyEvent -= SetFrequency;
 	}
 
