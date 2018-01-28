@@ -12,16 +12,16 @@ public class Door : MonoBehaviour {
 
 	public bool isSlidingDoor;
 
-	AudioSource audio;
+	AudioSource doorSound;
 
 	// Use this for initialization
 	void Start () {
-		audio = GetComponent<AudioSource>();
+		doorSound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(currentFrequency > frequencyRange.min && currentFrequency < frequencyRange.max && !isActivated) {
+		if(currentFrequency >= frequencyRange.min && currentFrequency <= frequencyRange.max && !isActivated) {
 			isActivated = true;
 			Activate();
 		} else if( (currentFrequency < frequencyRange.min || currentFrequency > frequencyRange.max) && isActivated) {
@@ -44,7 +44,7 @@ public class Door : MonoBehaviour {
 		} else {
 			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 1, transform.localPosition.z);
 		}
-		audio.Play();
+		doorSound.Play();
 	}
 
 	public void Deactivate () {
@@ -53,7 +53,7 @@ public class Door : MonoBehaviour {
 		} else {
 			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1, transform.localPosition.z);
 		}
-		audio.Play();
+		doorSound.Play();
 	}
 
 	public void SetFrequency(float frequency) {
