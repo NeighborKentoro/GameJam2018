@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c415c0ae26a56428806aac21df1a41, type: 3}
   m_Name: range_4-11
   m_EditorClassIdentifier: 
-  min: 0
-  max: 0
+  min: 4
+  max: 11
