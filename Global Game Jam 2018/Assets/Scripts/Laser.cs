@@ -14,12 +14,14 @@ public class Laser : MonoBehaviour {
 	private Vector3 forward;
 	public Direction dir;
 	public Transform laserCylinder;
+	private AudioSource laserSound;
 
     public RectTransform labelTransform;
     public Text labelText;
 
     // Use this for initialization
     void Start () {
+		laserSound = GetComponent<AudioSource>();
 		if(dir == Direction.NE) {
 			forward = new Vector3(1, 0, 0);
 		} else if(dir == Direction.NW) {
@@ -64,11 +66,12 @@ public class Laser : MonoBehaviour {
 	public void Activate () {
 		CalculateLaserLength();
 		laserCylinder.gameObject.SetActive(true);
-
+		laserSound.Play();
 	}
 
 	public void Deactivate () {
 		laserCylinder.gameObject.SetActive(false);
+		laserSound.Stop();
 	}
 
 	public void SetFrequency(float frequency) {

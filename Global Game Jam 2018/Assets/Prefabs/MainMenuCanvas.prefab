@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114470214946212134}
   - component: {fileID: 114290727916194880}
   - component: {fileID: 114166506480406998}
+  - component: {fileID: 82700765089170172}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -147,6 +148,86 @@ Transform:
   m_Father: {fileID: 224326004930548156}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82700765089170172
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1083681339176438}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b2ed2f8f9141069488bbc94393115978, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114007153526171624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +359,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57a1a2640c679846b8c878d7b784440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 65cbb38f98245924d843358063e5002c, type: 2}
+  snapshots:
+  - {fileID: 245201343427333040, guid: 65cbb38f98245924d843358063e5002c, type: 2}
+  - {fileID: 245651020264380894, guid: 65cbb38f98245924d843358063e5002c, type: 2}
+  weights:
+  - 0
+  - 1
 --- !u!114 &114219696993785204
 MonoBehaviour:
   m_ObjectHideFlags: 1

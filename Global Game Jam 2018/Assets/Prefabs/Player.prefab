@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54774908599886526}
   - component: {fileID: 114696887090318356}
   - component: {fileID: 82304245774128564}
+  - component: {fileID: 81250609610222548}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -131,6 +132,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!81 &81250609610222548
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564929590308096}
+  m_Enabled: 1
 --- !u!82 &82304245774128564
 AudioSource:
   m_ObjectHideFlags: 1
@@ -180,7 +188,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -220,9 +228,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.7825558, g: 1, b: 0.7647059, a: 1}
+  m_Color: {r: 0.51075053, g: 1, b: 0.4705882, a: 1}
   m_Intensity: 0.5
-  m_Range: 4
+  m_Range: 3
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -262,8 +270,6 @@ MonoBehaviour:
   freqRange: {fileID: 11400000, guid: 72a641624055dce4880f2c7b90b8676d, type: 2}
   currentFrequency: 1
   startPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!136 &136433761008582638
 CapsuleCollider:
