@@ -221,8 +221,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.13
-  m_Range: 5
+  m_Intensity: 0.8
+  m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -261,7 +261,10 @@ MonoBehaviour:
   maxSpeed: 2.5
   freqRange: {fileID: 11400000, guid: 72a641624055dce4880f2c7b90b8676d, type: 2}
   currentFrequency: 1
-  startPoints: []
+  startPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!136 &136433761008582638
 CapsuleCollider:
   m_ObjectHideFlags: 1
