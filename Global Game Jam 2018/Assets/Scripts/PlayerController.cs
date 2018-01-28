@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour {
 
 	private int currentLevel = 0;
 
+	AudioSource shuffleSound;
+
 	// Use this for initialization
 	void Start () {
 		rbody = GetComponent<Rigidbody>();
+		shuffleSound = GetComponent<AudioSource>();
 
 		transform.position = startPoints[currentLevel].transform.position;
 		currentLevel += 1;
@@ -60,6 +63,12 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
+		if( (xSpeed != 0 || zSpeed != 0) && !shuffleSound.isPlaying) {
+			shuffleSound.Play();
+		} else if( Mathf.Approximately(xSpeed, 0) && Mathf.Approximately(zSpeed, 0) ) {
+			shuffleSound.Stop();
+		}
+
 		rbody.velocity = new Vector3(xSpeed, rbody.velocity.y, zSpeed);
 		#endregion
 
@@ -86,6 +95,8 @@ public class PlayerController : MonoBehaviour {
 		if(currentLevel < startPoints.Length) {
 			transform.position = startPoints[currentLevel].transform.position;
 			currentLevel += 1;
+			currentFrequency = 1;
+			EventManager.SendFrequency(1);
 		}
 	}
 }
