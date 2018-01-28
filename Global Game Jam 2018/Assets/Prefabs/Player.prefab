@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 2.5
   freqRange: {fileID: 11400000, guid: 72a641624055dce4880f2c7b90b8676d, type: 2}
-  currentFrequency: 0
+  currentFrequency: 1
   startPoints: []
 --- !u!136 &136433761008582638
 CapsuleCollider:
