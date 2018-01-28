@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 		float zSpeed = 0;
 		float xAxis = Input.GetAxis("Horizontal");
 		float yAxis = Input.GetAxis("Vertical");
-        float freqMod = Input.GetAxisRaw("Frequency") * .48f;
+        float freqMod = Input.GetAxisRaw("Frequency") * .25f;
 
         #region PlayerMovement
         if(controlsEnabled) {
