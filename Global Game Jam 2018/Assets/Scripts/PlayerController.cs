@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -88,6 +89,10 @@ public class PlayerController : MonoBehaviour {
                     EventManager.SendFrequency(currentFrequency);
                 }
             }
+
+			if(Input.GetKeyDown(KeyCode.Escape)) {
+				SceneManager.LoadScene(0);
+			}
         }
 
         if( (xSpeed != 0 || zSpeed != 0) && !shuffleSound.isPlaying) {
