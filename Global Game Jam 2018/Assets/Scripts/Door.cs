@@ -16,11 +16,19 @@ public class Door : MonoBehaviour {
     public RectTransform labelTransform;
     public Text labelText;
 
+    public Material slidingMaterial;
+
 	AudioSource doorSound;
 
 	// Use this for initialization
 	void Start () {
 		doorSound = GetComponent<AudioSource>();
+
+        //override for object material
+        if (isSlidingDoor) {
+            MeshRenderer thisRenderer = GetComponent<MeshRenderer>();
+            thisRenderer.material = slidingMaterial;
+        }
 	}
 	
 	// Update is called once per frame

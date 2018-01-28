@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 33896999454823324}
   - component: {fileID: 65504786033956052}
   - component: {fileID: 23685042499464746}
+  - component: {fileID: 114991492794383572}
   m_Layer: 0
   m_Name: TopRightWall
   m_TagString: Untagged
@@ -75,6 +76,7 @@ GameObject:
   - component: {fileID: 33171367612424874}
   - component: {fileID: 65410619100052854}
   - component: {fileID: 23234043724592368}
+  - component: {fileID: 114737130917808406}
   m_Layer: 0
   m_Name: TopLeftWall
   m_TagString: Untagged
@@ -182,7 +184,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c7e177f20292a7d40afc643ca753f398, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -216,7 +218,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c7e177f20292a7d40afc643ca753f398, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -367,3 +369,99 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114737130917808406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560549773075574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce07fe8becd4594498343b268a4506b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front:
+    serializedVersion: 2
+    x: 0.4
+    y: 0
+    width: 0.6
+    height: 0.86
+  top:
+    serializedVersion: 2
+    x: 0
+    y: 0.86
+    width: 1
+    height: 0.14
+  back:
+    serializedVersion: 2
+    x: 0.4
+    y: 0
+    width: 0.6
+    height: 0.86
+  bottom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 0.1
+  left:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.2
+    height: 0.86
+  right:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxRandomMultiplier: 0
+--- !u!114 &114991492794383572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159633222050638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce07fe8becd4594498343b268a4506b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front:
+    serializedVersion: 2
+    x: 0.4
+    y: 0
+    width: 0.6
+    height: 0.86
+  top:
+    serializedVersion: 2
+    x: 0
+    y: 0.86
+    width: 1
+    height: 0.14
+  back:
+    serializedVersion: 2
+    x: 0.4
+    y: 0
+    width: 0.6
+    height: 0.86
+  bottom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 0.2
+  left:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.2
+    height: 0.86
+  right:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxRandomMultiplier: 0

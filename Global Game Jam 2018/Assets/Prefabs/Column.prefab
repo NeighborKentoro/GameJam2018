@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65007774363897738}
   - component: {fileID: 23359292834206680}
   - component: {fileID: 114380062266741650}
+  - component: {fileID: 114268873899838974}
   m_Layer: 0
   m_Name: Column
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 70a0b72dc6f09f046894aab4be004ef2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +97,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114268873899838974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253927593173640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce07fe8becd4594498343b268a4506b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  top:
+    serializedVersion: 2
+    x: 0.1
+    y: 0.4
+    width: 0.6
+    height: 0.6
+  back:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  bottom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  left:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  right:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxRandomMultiplier: 0
 --- !u!114 &114380062266741650
 MonoBehaviour:
   m_ObjectHideFlags: 1

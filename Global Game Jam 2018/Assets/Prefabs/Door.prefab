@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 23631325573406956}
   - component: {fileID: 114411968052108808}
   - component: {fileID: 82429086854485862}
+  - component: {fileID: 114576659874756944}
   m_Layer: 0
   m_Name: ActualDoor
   m_TagString: Untagged
@@ -125,7 +126,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 59c25a57e01bdea44a98dc946afff3c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -307,6 +308,55 @@ MonoBehaviour:
   isSlidingDoor: 0
   labelTransform: {fileID: 224606999178090256}
   labelText: {fileID: 114040682750588518}
+  slidingMaterial: {fileID: 2100000, guid: be3bd398923c4254681312acbb028f4d, type: 2}
+--- !u!114 &114576659874756944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970120294321858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce07fe8becd4594498343b268a4506b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  top:
+    serializedVersion: 2
+    x: 0
+    y: 0.9
+    width: 1
+    height: 0.1
+  back:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  bottom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 0.1
+  left:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.1
+    height: 1
+  right:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxRandomMultiplier: 0
 --- !u!114 &114604689404373214
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65199574365481896}
   - component: {fileID: 23737690774780140}
   - component: {fileID: 114172621433116356}
+  - component: {fileID: 114948195619442048}
   m_Layer: 0
   m_Name: JustAWall
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c7e177f20292a7d40afc643ca753f398, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,3 +111,51 @@ MonoBehaviour:
   snapToCenter: 0
   isCorner: 0
   isWall: 1
+--- !u!114 &114948195619442048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985363105864482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce07fe8becd4594498343b268a4506b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.1
+    height: 0.86
+  top:
+    serializedVersion: 2
+    x: 0.86
+    y: 0
+    width: 0.1
+    height: 0.14
+  back:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.1
+    height: 0.86
+  bottom:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.1
+    height: 0.2
+  left:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.2
+    height: 0.86
+  right:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  maxRandomMultiplier: 10
