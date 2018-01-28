@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: b4c6e674c20986c44a023b74d58ab7c6
-timeCreated: 1517092237
+guid: 9f6248ba448b6524dbd2e041b6098cba
+timeCreated: 1517165860
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: potted_plant
-    400000: //RootNode
-    400002: potted_plant
-    2100000: potted_plantMat
-    2300000: potted_plant
-    3300000: potted_plant
-    4300000: potted_plant
+    100000: banana
+    100002: //RootNode
+    400000: banana
+    400002: //RootNode
+    2100000: palette
+    2300000: banana
+    3300000: banana
+    4300000: banana
   externalObjects: {}
   materials:
     importMaterials: 1
